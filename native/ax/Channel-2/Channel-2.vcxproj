@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>Channel</ProjectName>
+    <ProjectGuid>{31171103-BB13-4B5B-B086-3C0225A55250}</ProjectGuid>
+    <RootNamespace>Channel</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Native2.0\NativeCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Lib>
+      <OutputFile>../../lib/TSnative/TSChanneld.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\Native2.0\NativeCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Lib>
+      <OutputFile>../../lib/TSnative/TSChannel.lib</OutputFile>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Channel.c" />
+    <ClCompile Include="ChannelDataMng.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Channel.h" />
+    <ClInclude Include="..\..\include\uniapi.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\ArcSoftEncoder.h" />
+    <ClInclude Include="..\..\include\ATI\ATI550.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\ATITheater.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\ATITheaterDef.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\CAMCtrl.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\CaptureMsg.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\Conexant2341x.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\CreativeVBDVCR.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\DiSeqC.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\DShowCapture.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\DShowUtilities.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\FilterGraphTools.h" />
+    <ClInclude Include="..\..\include\guids.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\HCWEncoder.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\hdhomerun_bda_interface.h" />
+    <ClInclude Include="..\..\include\impegmux.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\MCEncoder.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\NEC61051.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\QAMCtrl.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\resource.h" />
+    <ClInclude Include="..\..\include\sage_DShowCaptureDevice.h" />
+    <ClInclude Include="..\..\include\sage_EncodingException.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\SageDTV.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\StdAfx.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\StreamMachine2210.h" />
+    <ClInclude Include="..\..\dll\DShowCapture-2\TunerPlugin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Native2.0\NativeCore.vcxproj">
+      <Project>{d7d53682-ac32-437e-bfab-c06a44f095ff}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

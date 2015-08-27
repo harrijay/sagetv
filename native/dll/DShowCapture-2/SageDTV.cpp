@@ -223,7 +223,7 @@ HRESULT  SetupTunerFreq( DShowCaptureInfo* pCapInfo, long freq, long bandwidth, 
 		{
 			for ( ULONG j=0 ; j<Interfaces ; j++ )
 			{
-				if (Interface[j] == IID_IBDA_FrequencyFilter )
+				if (Interface[j] == __uuidof(IBDA_FrequencyFilter) )
 				{
 					hr = bdaNetTop->GetControlNode(0, 1, NodeType[i], &iNode);
 					if (hr == S_OK)
@@ -301,7 +301,7 @@ HRESULT  SetupTunerModulator( DShowCaptureInfo* pCapInfo,
 		{
 			for ( ULONG j=0 ; j<Interfaces ; j++ )
 			{
-				if (Interface[j] == IID_IBDA_DigitalDemodulator )
+				if (Interface[j] == __uuidof(IBDA_DigitalDemodulator) )
 				{
 					hr = bdaNetTop->GetControlNode(0, 1, NodeType[i], &iNode);
 					if (hr == S_OK)
@@ -404,7 +404,7 @@ HRESULT  SetupTunerLNBInfo( DShowCaptureInfo* pCapInfo, long low, long hi, long 
 		{
 			for ( ULONG j=0 ; j<Interfaces ; j++ )
 			{
-				if (Interface[j] == IID_IBDA_LNBInfo )
+				if (Interface[j] == __uuidof(IBDA_LNBInfo) )
 				{
 					hr = bdaNetTop->GetControlNode(0, 1, NodeType[i], &iNode);
 					if (hr == S_OK)
@@ -486,7 +486,7 @@ HRESULT  SetupTunerProgramFilter( DShowCaptureInfo* pCapInfo, unsigned int Progr
 			for ( ULONG j=0 ; j<Interfaces ; j++ )
 			{
 				//SiliconDust Propritery API
-				if ( Interface[j] == IID_IHDHomeRun_ProgramFilter )
+				if ( Interface[j] == __uuidof(IHDHomeRun_ProgramFilter) )
 				{
 					hr = bdaNetTop->GetControlNode(0, 1, NodeType[i], &iNode);
 					if (hr == S_OK)
@@ -1261,7 +1261,7 @@ int SageCheckLocked( void* Capture )
 		{
 			for ( ULONG j=0 ; j<Interfaces ; j++ )
 			{
-				if (Interface[j] == IID_IBDA_SignalStatistics)
+				if (Interface[j] == __uuidof(IBDA_SignalStatistics))
 				{
 					hr = bdaNetTop->GetControlNode(0, 1, NodeType[i], &iNode);
 					if (hr == S_OK)
@@ -1640,7 +1640,7 @@ void _ClearPIDMap(  DShowCaptureInfo *pCapInfo )
 	if ( SUCCEEDED(hr = graphTools.FindPin( pCapInfo->pBDADemux, L"1", &pPin.p, REQUESTED_PINDIR_OUTPUT )) )
 	{
 		IMPEG2PIDMap *pIPidMap = NULL;
-		hr = pPin->QueryInterface(IID_IMPEG2PIDMap, (void**)&pIPidMap);
+		hr = pPin->QueryInterface(__uuidof(IMPEG2PIDMap), (void**)&pIPidMap);
 		if (SUCCEEDED(hr))
 		{
 			ULONG i,pid_total = 0;

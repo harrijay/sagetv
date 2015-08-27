@@ -803,7 +803,7 @@ HRESULT  ChannelSinalStrength( JNIEnv *env, DShowCaptureInfo* pCapInfo, long *st
 		{
 			for ( ULONG j=0 ; j<Interfaces ; j++ )
 			{
-				if (Interface[j] == IID_IBDA_SignalStatistics)
+				if (Interface[j] == __uuidof(IBDA_SignalStatistics))
 				{
 					hr = bdaNetTop->GetControlNode(0, 1, NodeType[i], &iNode);
 					if (hr == S_OK)

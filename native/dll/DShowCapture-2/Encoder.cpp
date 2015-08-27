@@ -2697,7 +2697,7 @@ void ClearPIDMap(  JNIEnv* env, DShowCaptureInfo *pCapInfo )
 	if ( SUCCEEDED(hr = graphTools.FindPin( pCapInfo->pBDADemux, L"1", &pPin.p, REQUESTED_PINDIR_OUTPUT )) )
 	{
 		IMPEG2PIDMap *pIPidMap = NULL;
-		hr = pPin->QueryInterface(IID_IMPEG2PIDMap, (void**)&pIPidMap);
+		hr = pPin->QueryInterface(__uuidof(IMPEG2PIDMap), (void**)&pIPidMap);
 		if (SUCCEEDED(hr))
 		{
 			ULONG i,pid_total = 0;

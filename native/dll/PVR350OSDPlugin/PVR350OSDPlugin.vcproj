@@ -4,6 +4,7 @@
 	Version="8.00"
 	Name="PVR350OSDPlugin"
 	ProjectGUID="{877FD7FD-055F-4D19-BF71-69BFF733B158}"
+	RootNamespace="PVR350OSDPlugin"
 	>
 	<Platforms>
 		<Platform
@@ -48,7 +49,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="$(SAGEDEVJDK)\include,$(SAGEDEVJDK)\include\win32,$(DXSDK_DIR)\include,$(DXSDK_DIR)\Samples\C++\DirectShow\BaseClasses"
+				AdditionalIncludeDirectories="$(SAGEDEVJDK)\include,$(SAGEDEVJDK)\include\win32,$(DXSDK_DIR)\include,$(SolutionDir)..\third_party\Microsoft\BaseClasses"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;PVR350OSDPLUGIN_EXPORTS"
 				StringPooling="true"
 				RuntimeLibrary="0"
@@ -144,7 +145,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(DXSDK_DIR)\Samples\C++\DirectShow\BaseClasses,$(SAGEDEVJDK)\include,$(SAGEDEVJDK)\include\win32,$(DXSDK_DIR)\include"
+				AdditionalIncludeDirectories="$(SolutionDir)..\third_party\Microsoft\BaseClasses,$(SAGEDEVJDK)\include,$(SAGEDEVJDK)\include\win32,$(DXSDK_DIR)\include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;PVR350OSDPLUGIN_EXPORTS"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
@@ -156,7 +157,7 @@
 				ProgramDataBaseFileName=".\Debug/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
-				DebugInformationFormat="4"
+				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
 			<Tool

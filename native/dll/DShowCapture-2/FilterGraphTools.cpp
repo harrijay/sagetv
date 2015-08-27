@@ -1312,8 +1312,8 @@ HRESULT FilterGraphTools::InitTuningSpace(CComPtr <ITuningSpace> &piTuningSpace,
 	{
 		IATSCTuningSpace*  piATSCTuningSpace;
 		
-		hr = CoCreateInstance( CLSID_ATSCTuningSpace, NULL, CLSCTX_INPROC_SERVER, 
-							IID_IATSCTuningSpace, reinterpret_cast<void**>(&piATSCTuningSpace));
+		hr = CoCreateInstance( __uuidof(ATSCTuningSpace), NULL, CLSCTX_INPROC_SERVER, 
+							__uuidof(IATSCTuningSpace), reinterpret_cast<void**>(&piATSCTuningSpace));
 		if ( FAILED(hr) )
 		{
 			Log( L"Failed to creat ATSC TuningSpace instance\n" );
@@ -1337,8 +1337,8 @@ HRESULT FilterGraphTools::InitTuningSpace(CComPtr <ITuningSpace> &piTuningSpace,
 	{
 		IATSCTuningSpace*  piATSCTuningSpace;
 		
-		hr = CoCreateInstance( CLSID_ATSCTuningSpace, NULL, CLSCTX_INPROC_SERVER, 
-							IID_IATSCTuningSpace, reinterpret_cast<void**>(&piATSCTuningSpace));
+		hr = CoCreateInstance( __uuidof(ATSCTuningSpace), NULL, CLSCTX_INPROC_SERVER, 
+							__uuidof(IATSCTuningSpace), reinterpret_cast<void**>(&piATSCTuningSpace));
 		if ( FAILED(hr) )
 		{
 			Log( L"Failed to creat QAM TuningSpace instance\n" );
@@ -1367,8 +1367,8 @@ HRESULT FilterGraphTools::InitTuningSpace(CComPtr <ITuningSpace> &piTuningSpace,
 		ITuningSpace*  piDVBTTuningSpace;
 		
 
-		hr = CoCreateInstance( CLSID_DVBTuningSpace, NULL, CLSCTX_INPROC_SERVER, 
-							IID_ITuningSpace, reinterpret_cast<void**>(&piDVBTTuningSpace));
+		hr = CoCreateInstance( __uuidof(DVBTuningSpace), NULL, CLSCTX_INPROC_SERVER, 
+							__uuidof(ITuningSpace), reinterpret_cast<void**>(&piDVBTTuningSpace));
 		if ( FAILED(hr) )
 		{
 			Log( L"Failed to creat instance DVBT TuningSpace \n" );
@@ -1402,7 +1402,7 @@ HRESULT FilterGraphTools::InitTuningSpace(CComPtr <ITuningSpace> &piTuningSpace,
 
 
 		CComPtr <IDVBTLocator> pDVBTLocator;
-		hr = pDVBTLocator.CoCreateInstance(CLSID_DVBTLocator);
+		hr = pDVBTLocator.CoCreateInstance(__uuidof(DVBTLocator));
 		if FAILED(hr) 
 		{
 			Log( L"The DVBTLocator class can't be created as part of an aggregate.\n" );
@@ -1492,8 +1492,8 @@ HRESULT FilterGraphTools::InitTuningSpace(CComPtr <ITuningSpace> &piTuningSpace,
 		ITuningSpace*  piDVBCTuningSpace;
 		
 
-		hr = CoCreateInstance( CLSID_DVBTuningSpace, NULL, CLSCTX_INPROC_SERVER, 
-							IID_ITuningSpace, reinterpret_cast<void**>(&piDVBCTuningSpace));
+		hr = CoCreateInstance( __uuidof(DVBTuningSpace), NULL, CLSCTX_INPROC_SERVER, 
+							__uuidof(ITuningSpace), reinterpret_cast<void**>(&piDVBCTuningSpace));
 		if ( FAILED(hr) )
 		{
 			Log( L"Failed to creat instance DVBC TuningSpace \n" );
@@ -1526,7 +1526,7 @@ HRESULT FilterGraphTools::InitTuningSpace(CComPtr <ITuningSpace> &piTuningSpace,
 		}
 
 		CComPtr <IDVBCLocator> pDVBCLocator;
-		hr = pDVBCLocator.CoCreateInstance(CLSID_DVBCLocator);
+		hr = pDVBCLocator.CoCreateInstance(__uuidof(DVBCLocator));
 		if FAILED(hr) 
 		{
 			Log( L"The DVBCLocator class can't be created as part of an aggregate.\n" );
@@ -1593,8 +1593,8 @@ HRESULT FilterGraphTools::InitTuningSpace(CComPtr <ITuningSpace> &piTuningSpace,
 		ITuningSpace*  pDVBSTuningSpace;
 		
 
-		hr = CoCreateInstance( CLSID_DVBSTuningSpace, NULL, CLSCTX_INPROC_SERVER, 
-							IID_ITuningSpace, reinterpret_cast<void**>(&pDVBSTuningSpace));
+		hr = CoCreateInstance( __uuidof(DVBSTuningSpace), NULL, CLSCTX_INPROC_SERVER, 
+							__uuidof(ITuningSpace), reinterpret_cast<void**>(&pDVBSTuningSpace));
 		if ( FAILED(hr) )
 		{
 			Log( L"Failed to creat instance DVBS TuningSpace \n" );
@@ -1636,7 +1636,7 @@ HRESULT FilterGraphTools::InitTuningSpace(CComPtr <ITuningSpace> &piTuningSpace,
 		piDVBSTuningSpace->put_SpectralInversion( BDA_SPECTRAL_INVERSION_NOT_SET );
 
 		CComPtr <IDVBSLocator> pDVBSLocator;
-		hr = pDVBSLocator.CoCreateInstance(CLSID_DVBSLocator);
+		hr = pDVBSLocator.CoCreateInstance(__uuidof(DVBSLocator));
 		if FAILED( hr )
 		{
 			if ( hr == REGDB_E_CLASSNOTREG )
@@ -1755,7 +1755,7 @@ HRESULT FilterGraphTools::CreateATSCTuneRequest(CComPtr <ITuningSpace> piTuningS
 
 	// setup ATSC locator
 	CComPtr <IATSCLocator> pATSCLocator;
-	hr = pATSCLocator.CoCreateInstance(CLSID_ATSCLocator);
+	hr = pATSCLocator.CoCreateInstance(__uuidof(ATSCLocator));
 	if ( FAILED( hr ) )
 	{
         Log( L"Cannot create the ATSC locator\n" );
@@ -1845,7 +1845,7 @@ HRESULT FilterGraphTools::CreateQAMTuneRequest(CComPtr <ITuningSpace> piTuningSp
 
 	// setup ATSC locator
 	CComPtr <IATSCLocator> pATSCLocator;
-	hr = pATSCLocator.CoCreateInstance(CLSID_ATSCLocator);
+	hr = pATSCLocator.CoCreateInstance(__uuidof(ATSCLocator));
 	if ( FAILED( hr ) )
 	{
         Log( L"Cannot create the ATSC locator\n" );
@@ -2024,7 +2024,7 @@ HRESULT FilterGraphTools::CreateDVBTTuneRequest(CComPtr <ITuningSpace> piTuningS
 	}
 
 	CComPtr <IDVBTLocator> pDVBTLocator;
-	hr = pDVBTLocator.CoCreateInstance(CLSID_DVBTLocator);
+	hr = pDVBTLocator.CoCreateInstance(__uuidof(DVBTLocator));
 	switch (hr)
 	{ 
 	case REGDB_E_CLASSNOTREG:
@@ -2109,7 +2109,7 @@ HRESULT FilterGraphTools::CreateDVBCTuneRequest(CComPtr <ITuningSpace> piTuningS
 	}
 
 	CComPtr <IDVBCLocator> pDVBCLocator;
-	hr = pDVBCLocator.CoCreateInstance(CLSID_DVBCLocator);
+	hr = pDVBCLocator.CoCreateInstance(__uuidof(DVBCLocator));
 	switch (hr)
 	{ 
 	case REGDB_E_CLASSNOTREG:
@@ -2297,7 +2297,7 @@ HRESULT FilterGraphTools::CreateDVBSTuneRequest(CComPtr <ITuningSpace> piTuningS
 	}
 	
 	CComPtr <IDVBSLocator> pDVBSLocator;
-	hr = pDVBSLocator.CoCreateInstance(CLSID_DVBSLocator);
+	hr = pDVBSLocator.CoCreateInstance(__uuidof(DVBSLocator));
 	switch (hr)
 	{ 
 	case REGDB_E_CLASSNOTREG:

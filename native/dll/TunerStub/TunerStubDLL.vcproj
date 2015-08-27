@@ -4,6 +4,7 @@
 	Version="8.00"
 	Name="TunerStubDLL"
 	ProjectGUID="{86B000F6-63F5-4041-BA33-74235002C84F}"
+	RootNamespace="TunerStubDLL"
 	>
 	<Platforms>
 		<Platform
@@ -73,7 +74,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib ..\..\..\third_party\Hauppauge\hcwIRBlast.lib"
+				AdditionalDependencies="odbc32.lib odbccp32.lib"
 				OutputFile="$(SAGEDEVDEBUG)\TunerStub.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2729999B-4EBD-4B3B-A62B-FC70BEA679CC}</ProjectGuid>
+    <RootNamespace>FileSource</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SAGEDEVJDK)\include\win32;$(SolutionDir)..\third_party\Microsoft\BaseClasses;$(DXSDK_DIR)\include;$(SAGEDEVJDK)\include;..\Native2.0\NativeCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>strmbasd.lib;msvcrtd.lib;quartz.lib;winmm.lib;odbc32.lib;odbccp32.lib;wsock32.lib;../../lib/TSnative/NativeCored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(SAGEDEVDEBUG)\SageTVFileSrc.ax</OutputFile>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)\lib;$(SolutionDir)..\third_party\Microsoft\baseclasses\debug_mbcs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <ModuleDefinitionFile>FileSourceFilter.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/FileSource.pdb</ProgramDatabaseFile>
+      <EntryPointSymbol>DllEntryPoint%4012</EntryPointSymbol>
+      <ImportLibrary>.\Debug/FileSource.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SAGEDEVJDK)\include\win32;$(SolutionDir)..\third_party\Microsoft\BaseClasses;$(DXSDK_DIR)\include;$(SAGEDEVJDK)\include;..\Native2.0\NativeCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>strmbase.lib;msvcrt.lib;quartz.lib;winmm.lib;odbc32.lib;odbccp32.lib;wsock32.lib;../../lib/TSnative/NativeCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(SAGEDEVREL)\SageTVFileSrc.ax</OutputFile>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)\lib;$(SolutionDir)..\third_party\Microsoft\baseclasses\release_mbcs%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>FileSourceFilter.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>DllEntryPoint%4012</EntryPointSymbol>
+      <ImportLibrary>.\Release/SageTVFileSrc.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\third_party\Microsoft\FileSource\AsyncIO.cpp" />
+    <ClCompile Include="..\..\..\third_party\Microsoft\FileSource\FileSourceFilter.cpp" />
+    <ClCompile Include="FileStreamData.cpp" />
+    <ClCompile Include="FilterProperties.cpp" />
+    <ClCompile Include="NetStreamData.cpp" />
+    <ClCompile Include="PTSParser.cpp" />
+    <ClCompile Include="StreamData.cpp" />
+    <ClCompile Include="StreamType.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FileSourceFilter.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\third_party\Microsoft\FileSource\AsyncIO.h" />
+    <ClInclude Include="DebugLog.h" />
+    <ClInclude Include="..\..\..\third_party\Microsoft\FileSource\FileSourceFilter.h" />
+    <ClInclude Include="FileStreamData.h" />
+    <ClInclude Include="FilterProperties.h" />
+    <ClInclude Include="..\..\include\isharedasync.h" />
+    <ClInclude Include="NetStreamData.h" />
+    <ClInclude Include="PTSParser.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="..\..\..\third_party\Microsoft\FileSource\strconv.h" />
+    <ClInclude Include="StreamData.h" />
+    <ClInclude Include="StreamType.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FileSource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
